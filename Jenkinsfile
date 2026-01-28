@@ -12,6 +12,12 @@ pipeline {
       }
     }
 
+    stage('Install Dependencies') {
+            steps {
+                sh 'python3 -m pip install --user -r requirements.txt'
+            }
+        }
+    
     stage('Building') {
        steps {
           echo 'Building from Jenkins'
