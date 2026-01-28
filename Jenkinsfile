@@ -13,10 +13,16 @@ pipeline {
     }
 
     stage('Install Dependencies') {
-            steps {
-                sh 'python3 -m pip install --user flask'
-            }
-        }
+    steps {
+        sh '''
+            python3 -m venv venv
+            . venv/bin/activate
+            pip install --upgrade pip
+            pip install flask
+        '''
+    }
+}
+
     
     stage('Building') {
        steps {
