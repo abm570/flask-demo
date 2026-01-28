@@ -11,6 +11,12 @@ pipeline {
           git 'https://github.com/abm570/flask-demo.git'
       }
     }
+
+    stage('Install Dependencies') {
+            steps {
+                sh 'python3 -m pip install --user flask'
+            }
+        }
     
     stage('Building') {
        steps {
