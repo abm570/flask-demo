@@ -32,7 +32,7 @@ pipeline {
 
     stage('Testing') {
         steps {
-          sh 'python3 app.py'
+          sh 'venv/bin/python3 app.py'
         }
     }
   }  
